@@ -1,0 +1,10 @@
+<div class="chat-container">
+  <header class="chat-header">
+    <h1>Asistente IA</h1>
+    <span class="model-badge">Llama 3.3 · Groq</span>
+  </header>
+
+  <app-message-list [messages]="messages()" />
+
+  <app-message-input [loading]="loading()" (messageSent)="sendMessage($event)" />
+</div>

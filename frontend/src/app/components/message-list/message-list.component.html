@@ -1,0 +1,11 @@
+<div class="message-list">
+  @if (messages().length === 0) {
+    <p class="empty">Escribe un mensaje para comenzar...</p>
+  }
+
+  @for (msg of messages(); track $index) {
+    <div class="message" [ngClass]="msg.role">
+      <span class="bubble">{{ msg.content }}</span>
+    </div>
+  }
+</div>

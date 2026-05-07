@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="input-area">
+  <textarea
+    formControlName="message"
+    placeholder="Escribe tu mensaje... (Enter para enviar)"
+    rows="2"
+    (keydown)="onKeydown($event)"
+  ></textarea>
+
+  <button type="submit" [disabled]="form.invalid || loading()">
+    @if (loading()) {
+      Enviando...
+    } @else {
+      Enviar
+    }
+  </button>
+</form>
