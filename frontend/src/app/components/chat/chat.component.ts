@@ -26,9 +26,8 @@ export class ChatComponent {
         this.loading.set(false);
       },
       error: () => {
-        this.messages.update(msgs => [...msgs, { role: 'assistant', content: 'Error al conectar con el servidor.' }]);
         this.loading.set(false);
-      }
+      },
     });
   }
 }
