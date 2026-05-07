@@ -1,0 +1,20 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.log
+
+# Secretos - NUNCA subir la API key
+appsettings.Development.json
+
+# Angular
+node_modules/
+dist/
+.angular/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
