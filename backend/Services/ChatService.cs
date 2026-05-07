@@ -12,8 +12,11 @@ public class ChatService : IChatService
         var apiKey = configuration["OpenAI:ApiKey"]
             ?? throw new InvalidOperationException("OpenAI API key not configured.");
 
-        var openAiClient = new OpenAIClient(apiKey);
-        _client = openAiClient.GetChatClient("gpt-4o-mini");
+        var openAiClient = new OpenAIClient(
+            new System.ClientModel.ApiKeyCredential(apiKey),
+            new OpenAIClientOptions { Endpoint = new Uri("https://api.groq.com/openai/v1") }
+        );
+        _client = openAiClient.GetChatClient("llama-3.3-70b-versatile");
     }
 
     public async Task<string> SendMessageAsync(string message)
